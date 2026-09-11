@@ -1,4 +1,4 @@
-package Practice_Selenium;
+package Practice_Selenium_DDT;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 import com.mysql.jdbc.Driver;
 
-public class ExecuteNonSelectQuery {
+public class ExecuteSelectQuery {
 
 	public static void main(String[] args) throws SQLException {
 		
@@ -22,11 +22,15 @@ public class ExecuteNonSelectQuery {
 		
 		Statement stat = conn.createStatement();
 		
-		int result = stat.executeUpdate("INSERT INTO project VALUES (    12,    'AI Agents',    'Develop cross-platform AI Agents for Work Automation',    'Completed',    '2023-04-15',    '2025-01-19',    5400.0,    '2026-04-15 13:02:11');");
-		System.out.println(result);
+		ResultSet resultset = stat.executeQuery("Select * from project");
+		
+		while (resultset.next()) {
+			System.out.println(resultset.getString(1));
+			System.out.println(resultset.getString(2));
+		}
+		
 	
 		conn.close();
-
 	}
 
 }

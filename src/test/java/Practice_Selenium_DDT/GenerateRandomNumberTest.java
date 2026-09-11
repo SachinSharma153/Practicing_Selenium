@@ -1,4 +1,4 @@
-package Practice_Selenium;
+package Practice_Selenium_DDT;
 
 import java.util.Random;
 
