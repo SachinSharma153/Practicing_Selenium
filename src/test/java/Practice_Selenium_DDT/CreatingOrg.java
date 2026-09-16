@@ -17,8 +17,6 @@ public class CreatingOrg {
 		
 		FileInputStream fis = new FileInputStream("C:\\Users\\User195\\Desktop\\CommonData.properties");
 		
-
-		
 		Properties pObj = new Properties();
 		
 		pObj.load(fis);
